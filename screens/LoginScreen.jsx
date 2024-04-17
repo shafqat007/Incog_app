@@ -9,6 +9,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 
 
+
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const [alert, setAlert] = useState(false); // Add useState for alert message
@@ -17,6 +18,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState(""); // Add useState for password
   const [getEmailValidationStatus, setGetEmailValidationStatus] =
     useState(false);
+
   const screenWidth = Math.round(Dimensions.get("window").width);
   const navigation = useNavigation();
   const handleLogin = async () => {

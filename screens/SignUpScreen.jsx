@@ -1,6 +1,6 @@
 import { View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
 import React, { useState } from "react"; // Import useState from react
-import { BGImage, Logo } from "../assets"; // Assuming BGImage and Logo are imported correctly
+import { BGImage, Logo ,incog} from "../assets"; // Assuming BGImage and Logo are imported correctly
 import { UserTextinput } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { setDoc, doc } from "firebase/firestore"; // Correct import statement for Firestore database module
@@ -41,10 +41,10 @@ const SignUpScreen = () => {
         className="h-96"
         style={{ width: screenWidth }}
       />
-      <View className="w-full h-full bg-white  rounded-tl-[60px] rounded-tr-[60px] -mt-80 flex items-center justify-start py-6 px-6 space-y-6">
+      <View className="w-full h-full bg-white  rounded-tl-[60px] rounded-tr-[60px] -mt-80 flex items-center justify-start py-6 px-6 space-y-3">
         {/* Main Container */}
-        <Image source={Logo} resizeMode="contain" className="h-16 w-16" />
-        <Text className="py-2 text-primaryText text-xl font-semibold">
+        <Image source={incog} resizeMode="contain" className="h-24 w-24" />
+        <Text className="py-0 text-primaryText text-xl font-semibold">
           Join with us!
         </Text>
 

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { useSelector,useDispatch } from "react-redux";
 import {SET_USER_NULL} from '../context/actions/userActions'
-import { ChatPlus } from "../assets";
+import { ChatPlus,incog } from "../assets";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { firestoreDB } from "../config/firebase.config";
@@ -47,7 +47,7 @@ const HomeScreen = () => {
     <View className="flex-1">
       <SafeAreaView>
         <View className="w-full flex-row items-center justify-between px-4 py-10">
-          <Image source={ChatPlus} resizeMode="contain" className="h-12 w-12" />
+          <Image source={incog} resizeMode="contain" className="h-20 w-20" />
           <Text className="pl-12 self-center justify-center font-semibold">
             Home
           </Text>
@@ -131,7 +131,7 @@ const MessageCard = ({ room }) => {
         </Text>
         <Text className=" text-[#333] text-sm ">User Name</Text>
       </View>
-      <Text className=" text-primary px-4 text-base font-semibold ">27m</Text>
+     {/* { <Text className=" text-primary px-4 text-base font-semibold ">27m</Text>} */}
     </TouchableOpacity>
   );
 };

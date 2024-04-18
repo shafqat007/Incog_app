@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { BGImage, Logo } from "../assets";
+import { BGImage, Logo,incog } from "../assets";
 import { UserTextinput } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -71,10 +71,10 @@ const LoginScreen = () => {
         style={{ width: screenWidth }}
       />
 
-      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-60 flex items-center justify-start py-6 px-6 space-y-6">
-        <Image source={Logo} resizeMode="contain" className="h-16 w-16" />
-        <Text className="py-2 text-primaryText text-xl font-semibold">
-          Welcome Back!
+      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-60 flex items-center justify-start py-6 px-6 space-y-3">
+        <Image source={incog} resizeMode="contain" className="h-24 w-24" />
+        <Text className="py-0 text-primaryText text-xl font-semibold">
+          Welcome Back to your secure chatApp
         </Text>
 
         <View className="w-full flex items-center justify-center space-y-3">

@@ -71,7 +71,7 @@ const LoginScreen = () => {
         style={{ width: screenWidth }}
       />
 
-      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-44 flex items-center justify-start py-6 px-6 space-y-6">
+      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-60 flex items-center justify-start py-6 px-6 space-y-6">
         <Image source={Logo} resizeMode="contain" className="h-16 w-16" />
         <Text className="py-2 text-primaryText text-xl font-semibold">
           Welcome Back!

@@ -64,7 +64,7 @@ const ChatScreen = ({ route }) => {
 
   return (
     <View className="flex-1">
-      <View className="w-full bg-primary px-4 py-6 flex-[0.2]">
+      <View className="w-full bg-primary px-4 py-6 flex-[0.30]">
         <View className="flex-row items-center justify-between w-full px-4 py-12">
           {/*go back*/}
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -157,10 +157,18 @@ const ChatScreen = ({ route }) => {
                             className="w-10 h-10 rounded-full"
                             resizeMode="cover"
                             source={{ uri: msg.user.photoURL }}
-                          /> */}
+                          /> 
+                          
+                            <Text className="text-gray-black text-base font-semibold capitalize">
+                {profileName}
+              </Text>*/}
+               
 
                           {/*text here*/}
                           <View className="m-1">
+                          <Text className="ext-[12px] text-black font-semibold capitalize">
+                {msg.user.fullName}
+              </Text>
                             <View className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center">
                               <Text className="text-base text-primaryText font-semibold">
                                 {msg.message}

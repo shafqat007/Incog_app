@@ -119,49 +119,70 @@ const ChatScreen = ({ route }) => {
                   </View>
                 </>
               ) : (
-                <>{messages?.map((msg,i) => msg.user.providerData.email ===user.providerData.email?
-                
-                
-                (
-                    
-                    <View className="m-1" key={i}>
-                        <View style={{alignSelf:'flex-end'}} className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center">
-                            <Text className="text-base text-primaryText font-semibold">{msg.message}</Text>
+                <>
+                  {messages?.map((msg, i) =>
+                    msg.user.providerData.email === user.providerData.email ? (
+                      <View className="m-1" key={i}>
+                        <View
+                          style={{ alignSelf: "flex-end" }}
+                          className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center"
+                        >
+                          <Text className="text-base text-primaryText font-semibold">
+                            {msg.message}
+                          </Text>
                         </View>
-                        <View  style={{alignSelf:'flex-end'}} >
-
-{msg?.timeStamp?.seconds && (
-    <Text className="text-[12px] text-black font-semibold">
-        {new Date(msg.timeStamp.seconds * 1000).toLocaleTimeString("en-US",{
-            hour:'2-digit',
-            minute:'2-digit'
-        
-        })}
-    </Text>
-
-)
-    
-
-}
+                        <View style={{ alignSelf: "flex-end" }}>
+                          {msg?.timeStamp?.seconds && (
+                            <Text className="text-[12px] text-black font-semibold">
+                              {new Date(
+                                msg.timeStamp.seconds * 1000
+                              ).toLocaleTimeString("en-US", {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}
+                            </Text>
+                          )}
                         </View>
-                    </View>
-                    
-                ):(
-                    
-                  <View className="m-1" key={i}>
-                    <View className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center">
-                      <Text className="text-base text-primaryText font-semibold">
-                        {msg.message}
-                      </Text>
-                    </View>
-                    </View>
-                
-                )
-                
-                
-                
-                
-                )}
+                      </View>
+                    ) : (
+                      <View
+                        style={{ alignSelf: "flex-start" }}
+                        className="flex items-center justify-start space-x-2"
+                        key={i}
+                      >
+                        <View className="space-x-2  flex-row items-center justify-center">
+                          {/*name here*/}
+
+                          {/* <Image
+                            className="w-10 h-10 rounded-full"
+                            resizeMode="cover"
+                            source={{ uri: msg.user.photoURL }}
+                          /> */}
+
+                          {/*text here*/}
+                          <View className="m-1">
+                            <View className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center">
+                              <Text className="text-base text-primaryText font-semibold">
+                                {msg.message}
+                              </Text>
+                            </View>
+                            <View style={{ alignSelf: "flex-start" }}>
+                              {msg?.timeStamp?.seconds && (
+                                <Text className="text-[12px] text-black font-semibold">
+                                  {new Date(
+                                    msg.timeStamp.seconds * 1000
+                                  ).toLocaleTimeString("en-US", {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                  })}
+                                </Text>
+                              )}
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    )
+                  )}
                 </>
               )}
             </ScrollView>

@@ -1,6 +1,12 @@
-import { View, Text, Image, Dimensions, TouchableOpacity, KeyboardAvoidingView ,Platform} from "react-native";
-import React, { useState } from "react"; // Import useState from react
-import { BGImage, Logo } from "../assets"; // Assuming BGImage and Logo are imported correctly
+import {
+  View,
+  Text,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
+import { BGImage, Logo } from "../assets";
 import { UserTextinput } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -8,18 +14,19 @@ import { firebaseAuth, firestoreDB } from "../config/firebase.config";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 
-
 const LoginScreen = () => {
   const dispatch = useDispatch();
-  const [alert, setAlert] = useState(false); // Add useState for alert message
-  const [alertMessage, setAlertMessage] = useState(null); // Add useState for alert message
-  const [email, setEmail] = useState(""); // Move useState inside the functional component
-  const [password, setPassword] = useState(""); // Add useState for password
-  const [getEmailValidationStatus, setGetEmailValidationStatus] =
-    useState(false);
+  const [alert, setAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [getEmailValidationStatus, setGetEmailValidationStatus] = useState(
+    false
+  );
 
   const screenWidth = Math.round(Dimensions.get("window").width);
   const navigation = useNavigation();
+
   const handleLogin = async () => {
     if (getEmailValidationStatus && email !== "") {
       await signInWithEmailAndPassword(firebaseAuth, email, password)
@@ -48,7 +55,7 @@ const LoginScreen = () => {
             setAlert(true);
             setAlertMessage("Invalid Email Address");
           }
-          setInterval(() => {
+          setTimeout(() => {
             setAlert(false);
           }, 4000);
         });
@@ -64,62 +71,40 @@ const LoginScreen = () => {
         style={{ width: screenWidth }}
       />
 
-      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-44 flex items-center justify-staret py-6 px-6 space-y-6">
-        {/* Main Container */}
-    
+      <View className="w-full h-full bg-white rounded-tl-[60px] rounded-tr-[60px] -mt-44 flex items-center justify-start py-6 px-6 space-y-6">
         <Image source={Logo} resizeMode="contain" className="h-16 w-16" />
         <Text className="py-2 text-primaryText text-xl font-semibold">
           Welcome Back!
         </Text>
 
-        <KeyboardAvoidingView
-          className="flex-1"
-          behavior={Platform === "ios" ? "padding" : "height"}
-          keyboardVerticalOffset={100}
-        >
-          <>
-        <View className="w-full flex items-center justify-center">
-          {/*alert message*/}
-      
-
+        <View className="w-full flex items-center justify-center space-y-3">
           {alert && (
             <Text className="text-red-500 text-sm">{alertMessage}</Text>
           )}
 
-          {/* email */}
           <UserTextinput
             placeholder="Email"
             isPass={false}
             setStatValue={setEmail}
             setGetEmailValidationStatus={setGetEmailValidationStatus}
           />
-          {/* password */}
+
           <UserTextinput
             placeholder="Password"
             isPass={true}
             setStatValue={setPassword}
           />
-          {/* login button */}
-
-
-
-
-
-
-<View className="w-full flex items-center justify-center">
-
 
           <TouchableOpacity
             onPress={handleLogin}
-            className="w-full px-36   py-2 rounded-xl bg-primary
-
-           my-3 flex items-center justify-center"
+            className="w-full px-4 py-2 rounded-xl bg-primary my-3 flex items-center justify-center"
           >
             <Text className="py-2 text-white text-xl font-semibold">
               Sign In
             </Text>
           </TouchableOpacity>
-          <View className="w-full py-5 px-20 flex-row items-center justify-center space-x-2">
+
+          <View className="w-full py-12 flex-row items-center justify-center space-x-2">
             <Text>Don't have an account?</Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("SignUpScreen")}
@@ -129,11 +114,7 @@ const LoginScreen = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          </View>
         </View>
-        </>
-</KeyboardAvoidingView>
-    
       </View>
     </View>
   );

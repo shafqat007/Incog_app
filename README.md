@@ -43,11 +43,13 @@ To run Incog, follow these steps:
 
 
 ## Screenshots
+1. ![Loading Screen](https://drive.google.com/uc?id=1gHHG-JbtVye23IowKvcBkdTNA5J8snwb)
+2. ![Sign-In Screen](https://drive.google.com/uc?id=18TJaLDZBzkOX9tamaTrYIac2TLMhz47W)
+3. ![Sign-Up Screen](https://drive.google.com/uc?id=1b0PYcpXisHG0l0AGDKATm5q2Fv3YZWUv)
+4. ![Home Screen](https://drive.google.com/uc?id=1UM2saBZj6mUNz_gwZfwG7eYwtsTAdD7Q)
+5. ![Add Chatroom Screen](https://drive.google.com/uc?id=1NH_ssoN_2BvQki3S_XNJt_Dbk3WiEvcW)
+6. ![Chatting Screen](https://drive.google.com/uc?id=1loLVbNvYeaWzh0grwGzAhX9ulhFSXlQR)
 
-![Sign-in Screen](https://drive.google.com/uc?export=download&id=1gHHG-JbtVye23IowKvcBkdTNA5J8snwb
-)
-![Home Screen](#)
-![Chat Screen](#)
 
 ## Feedback
 

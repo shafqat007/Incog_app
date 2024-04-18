@@ -41,7 +41,7 @@ const SignUpScreen = () => {
         className="h-96"
         style={{ width: screenWidth }}
       />
-      <View className="w-full h-full bg-white  rounded-tl-[60px] rounded-tr-[60px] -mt-44 flex items-center justify-staret py-6 px-6 space-y-6">
+      <View className="w-full h-full bg-white  rounded-tl-[60px] rounded-tr-[60px] -mt-80 flex items-center justify-start py-6 px-6 space-y-6">
         {/* Main Container */}
         <Image source={Logo} resizeMode="contain" className="h-16 w-16" />
         <Text className="py-2 text-primaryText text-xl font-semibold">

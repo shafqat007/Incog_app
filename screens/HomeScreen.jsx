@@ -8,7 +8,8 @@ import {
   ScrollView,
   ActivityIndicator,
 } from "react-native";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import {SET_USER_NULL} from '../context/actions/userActions'
 import { ChatPlus } from "../assets";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -19,6 +20,7 @@ const HomeScreen = () => {
   const user = useSelector((state) => state.user.user);
   const [isLoading, setIsLoading] = useState(true);
   const [chats, setChats] = useState(null);
+  const dispatch = useDispatch(); 
 
   useLayoutEffect(() => {
     const chatQuery = query(
@@ -35,7 +37,12 @@ const HomeScreen = () => {
 
   const profileName = user ? user.fullName : "";
   const navigation = useNavigation();
-
+  const handleLogout = () => {
+    // Dispatch action to set user to null
+    dispatch(SET_USER_NULL());
+    // Navigate to the login screen
+    navigation.navigate("LoginScreen");
+  };
   return (
     <View className="flex-1">
       <SafeAreaView>
@@ -48,6 +55,9 @@ const HomeScreen = () => {
             <Text>
               Welcome: <Text className="font-extrabold">{profileName}</Text>
             </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleLogout}>
+            <Text>Logout</Text>
           </TouchableOpacity>
         </View>
 

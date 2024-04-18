@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { firestoreDB } from "../config/firebase.config";
 import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
-import { set } from "firebase/database";
+
 
 
 const AddToChatScreen = () => {

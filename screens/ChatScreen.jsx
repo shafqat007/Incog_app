@@ -128,6 +128,22 @@ const ChatScreen = ({ route }) => {
                         <View style={{alignSelf:'flex-end'}} className="bg-gray-200 rounded-2xl px-4 py-2 flex-row items-center justify-center">
                             <Text className="text-base text-primaryText font-semibold">{msg.message}</Text>
                         </View>
+                        <View  style={{alignSelf:'flex-end'}} >
+
+{msg?.timeStamp?.seconds && (
+    <Text className="text-[12px] text-black font-semibold">
+        {new Date(msg.timeStamp.seconds * 1000).toLocaleTimeString("en-US",{
+            hour:'2-digit',
+            minute:'2-digit'
+        
+        })}
+    </Text>
+
+)
+    
+
+}
+                        </View>
                     </View>
                     
                 ):(
